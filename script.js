@@ -1,6 +1,8 @@
 function success(pos){
-  console.log("Position" + pos);
+  const coords = pos.coords.toJSON()
+
+  
   const elem = document.getElementById("position");
-  elem.append(pos);}
+  elem.append("TS: " + pos.timestamp + ", " + "Coordinates: " + JSON.stringify(coords));}
 
 navigator.geolocation.getCurrentPosition(success);
